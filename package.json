@@ -6,13 +6,17 @@
   "author": "Shin Narita <triplfjump1417@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "@babel/core": "^7.0.0",
+    "@babel/register": "^7.0.0",
+    "babel": "^6.23.0",
     "babel-core": "^6.26.3",
-    "babel-preset-2017": "^0.0.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-es2017": "^6.24.1",
     "babel-register": "^6.26.0",
+    "electron": "^2.0.8",
     "electron-cli": "^0.2.8"
   },
   "scripts": {
-    "start": "electron",
-    "main": "index.js"
+    "start": "electron ."
   }
 }
