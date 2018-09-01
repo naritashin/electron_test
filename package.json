@@ -6,8 +6,6 @@
   "author": "Shin Narita <triplfjump1417@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "@babel/core": "^7.0.0",
-    "@babel/register": "^7.0.0",
     "babel": "^6.23.0",
     "babel-core": "^6.26.3",
     "babel-preset-env": "^1.7.0",

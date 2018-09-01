@@ -1,22 +1,30 @@
-import electron, {
+import {
   app,
   BrowserWindow
 } from 'electron';
 
-let mainWindow = null;
+let mainWindow;
+
+const createWindow = () => {
+  mainWindow = new BrowserWindow({
+    width: 800,
+    height: 600,
+    title: app.getName()
+  });
+  mainWindow.loadFile('index.html');
+
+  mainWindow.on('closed', () => {
+    mainWindow = null;
+  });
+
+}
 
 app.on('window-all-closed', () => {
   if (process.platform != 'darwin') app.quit();
 });
 
-app.on('ready', () => {
-  mainWindow = new BrowserWindow({
-    width: 800,
-    height: 600
-  });
-  mainWindow.loadURL(`file://${ __dirname }/index.html`);
+app.on('ready', createWindow);
 
-  mainWindow.on('closed', () => {
-    mainWindow = null;
-  });
-});
+app.on('active', () => {
+  if (mainWindow === null) createWindow;
+})
